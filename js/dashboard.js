@@ -78,6 +78,19 @@ menuItem4.addEventListener('click', () => {
 	menuItem4.classList.add('active');
 });
 
+// Generate Random Balance Amount
+const balanceValues = ['$500,000', '$1,000,000', '$300,000', '$999,999'];
+const balanceAmount = document.querySelector('.balance-amount');
+
+const getRandomBalance = () => {
+	return Math.floor(Math.random() * balanceValues.length);
+}
+
+window.addEventListener('load', (event) => {
+	balanceAmount.innerHTML = balanceValues[getRandomBalance()];
+});
+
+
 // Behavior for Select list in Receive section
 const currency = document.querySelector('.select-currency');
 const btcAddress = document.querySelector('.btc-address');
